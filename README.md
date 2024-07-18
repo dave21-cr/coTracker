@@ -1,3 +1,2 @@
 # Co Tracker
 
-- simple vacancy tracker web application built using .....
