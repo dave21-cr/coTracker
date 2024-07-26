@@ -1,9 +1,29 @@
-export default function Homepage(){
+import CCard from "../components/chart_card";
+import Header from "../components/header";
+import Card from "../components/card";
+import image from "../images/dbg.jpg";
+export default function Homepage() {
 
     return (
-    <div className="container">
-        <h1>we will continue here !!!</h1>
-    </div>
-    ) 
+        <div className="container">
+            <Header name="foby" />
+            <div className="flex flex-row w-full flex-wrap justify-center bg-cover" style={{ backgroundImage: `url(${image.src})` }}>
+                <CCard header="TASK COMPLETION" type="bar" data={{ labels: ["expired", "completed"], datas: [1, 5] }} />
+                <CCard header="OVER VIEW" type="don" data={{ labels: ["expired", "completed", "pending"], datas: [1, 5, 10] }} />
+            </div>
+            <h1 className="text-3xl font-bold text-slate-900"> summary of tasks</h1>
+            <div className="flex flex-row w-full flex-wrap p-3">
+                <Card header="Tasks with in 3 days" count={12} />
+                <Card header="Today Active tasks" count={2} />
+                <Card header="Performance of the month" count={50} type="overall" />
+            </div>
+            <h1 className="text-3xl font-bold text-slate-900"> NEXT ACTIVE TASK</h1>
+            <div className="flex flex-row w-full font-light text-2xl gap-6 shadow-sm p-10
+             bg-gradient-to-r from-red-300 to-zinc-50">
+                <div className="w-5 h-5 bg-green-500 rounded-full"></div>
+                <h1>praying a God!</h1>
+            </div>
+        </div >
+
+    )
 }
-        

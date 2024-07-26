@@ -30,7 +30,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
     return (
         <html>
             <body className={inter.className}>
-                <nav className="w-full">
+                <nav className="w-full sticky top-0" >
                     <Navbar theme="day"/>
                 </nav>
                 {children}

@@ -10,7 +10,7 @@
 
 /**custom body  **/
 body{
-   @apply bg-gray-400 flex items-start flex-col;
+   @apply bg-gray-100 flex items-start flex-col;
 }
 
 /** navbar and menu items **/
@@ -31,3 +31,17 @@ body{
 .header-link{
     @apply font-extrabold text-xl uppercase hover:text-red-950;
 }
+
+/**  the container nad body  **/
+
+.container {
+@apply flex flex-col  w-full  overflow-x-hidden 
+overflow-y-auto items-center gap-5
+}
+
+
+.test{
+    @apply text-5xl;
+}
+
+
