@@ -8,40 +8,39 @@
     --dark:rgba(8, 10, 3, 0.342);
 }
 
+
 /**custom body  **/
 body{
-   @apply bg-gray-100 flex items-start flex-col;
-}
+    @apply bg-gray-100 flex items-start flex-col;
+ }
+ 
+ /** navbar and menu items **/
+ .navbar{
+     @apply flex items-center justify-between flex-row text-white dark:text-orange-600
+     font-bold text-lg px-20 max-sm:px-3 py-10 max-sm:py-5 w-full bg-gradient-to-r from-slate-500 to-slate-950;
+ }
+ 
+ .header-left{
+     @apply flex flex-row gap-1 p-1 
+ }
+ 
+ .header-right{
+     @apply flex flex-row justify-start gap-5 max-sm:invisible;
+     
+ }
+ 
+ .header-link{
+     @apply font-extrabold text-xl uppercase hover:text-red-950;
+ }
+ 
+ /**  the container nad body  **/
+ 
+ .container {
+ @apply flex flex-col  w-full  overflow-x-hidden 
+ overflow-y-auto items-center gap-5
+ }
+ 
 
-/** navbar and menu items **/
-.navbar{
-    @apply flex items-center justify-between flex-row text-white dark:text-orange-600
-    font-bold text-lg px-20 max-sm:px-3 py-10 max-sm:py-5 w-full bg-gradient-to-r from-slate-500 to-slate-950;
-}
-
-.header-left{
-    @apply flex flex-row gap-1 p-1 
-}
-
-.header-right{
-    @apply flex flex-row justify-start gap-5 max-sm:invisible;
-    
-}
-
-.header-link{
-    @apply font-extrabold text-xl uppercase hover:text-red-950;
-}
-
-/**  the container nad body  **/
-
-.container {
-@apply flex flex-col  w-full  overflow-x-hidden 
-overflow-y-auto items-center gap-5
-}
-
-
-.test{
-    @apply text-5xl;
-}
-
-
+ .test{
+     @apply text-5xl;
+ }
