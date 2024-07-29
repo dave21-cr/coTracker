@@ -1,3 +1,5 @@
+"use client"
+//register form 
 //login form 
 "use client"
 
@@ -8,23 +10,24 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Label } from "@radix-ui/react-label";
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { loginschema } from "@/app/actions/schemas";
-import {login} from "../../actions/userAction"
+import { Registerschema } from "@/app/actions/schemas";
+import { registerUser } from "../../actions/userAction"
 
 
-export default function LoginForm() {
+export default function RegisterForm() {
     //react-hook-form
-    const form = useForm<z.infer<typeof loginschema>>({
-        resolver: zodResolver(loginschema),
+    const form = useForm<z.infer<typeof Registerschema>>({
+        resolver: zodResolver(Registerschema),
         defaultValues:
         {
-            email: ""
+            email: "",
+            username: ""
         }
     })
 
     //onsubmit callbac
-   async function onsubmit(values: z.infer<typeof loginschema>){
-       await login(values)
+    async function onsubmit(values: z.infer<typeof Registerschema>) {
+        await registerUser(values)
     }
 
     return (
@@ -51,6 +54,24 @@ export default function LoginForm() {
 
                 <FormField
                     control={form.control}
+                    name="username"
+                    render={({ field }) =>
+                    (
+                        <FormItem>
+                            <FormLabel>Username</FormLabel>
+                            <FormDescription>
+                                input username
+                            </FormDescription>
+                            <FormControl>
+                                <Input placeholder="john" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )
+                    } />
+
+                <FormField
+                    control={form.control}
                     name="password"
                     render={({ field }) =>
                     (
@@ -66,7 +87,24 @@ export default function LoginForm() {
                         </FormItem>
                     )
                     } />
-                <Button variant={"outline"} type="submit" className="my-2">Login</Button>
+                <FormField
+                    control={form.control}
+                    name="confirmpass"
+                    render={({ field }) =>
+                    (
+                        <FormItem>
+                            <FormLabel>confirm password</FormLabel>
+                            <FormDescription>
+                                password confirmation
+                            </FormDescription>
+                            <FormControl>
+                                <Input placeholder="***" type="password" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )
+                    } />
+                <Button variant={"outline"} type="submit" className="my-2">Register</Button>
             </form>
         </Form>
     )

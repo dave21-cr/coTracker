@@ -1,7 +1,11 @@
-//login page
-export default function Login()
+//signup
+import RegisterForm from "./register"
+import register from "./register"
+export default function Register()
 {
     return (
-        <h1>signup page</h1>
+        <main className="flex flex-col items-center justify-center w-full ">
+            <RegisterForm/>
+        </main>
     )
 }
