@@ -11,7 +11,7 @@
 
 /**custom body  **/
 body{
-    @apply bg-gray-100 flex items-start flex-col;
+    @apply bg-gray-100 flex items-start flex-col gap-2;
  }
  
  /** navbar and menu items **/
