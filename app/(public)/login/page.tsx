@@ -1,5 +1,9 @@
 //login page
 import LoginForm from "./login"
+import {GetServerSideProps} from "next"
+
+
+//page component
 export default function Login()
 {
     return (
@@ -8,3 +12,4 @@ export default function Login()
         </main>
     )
 }
+

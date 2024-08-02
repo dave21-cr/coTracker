@@ -45,7 +45,7 @@ const Navbar: React.FC<navbarprop> = ({ theme, type }) => {
               <label>&#x263D; night</label>
             )}
           </button>
-          <Link href={"/logout"} className="header-link">&#x21bb;Logout</Link>
+          <Link href={"/api/auth/signout"} className="header-link">&#x21bb;Logout</Link>
         </div>
       }
 

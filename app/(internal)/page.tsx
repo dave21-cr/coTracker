@@ -1,8 +1,12 @@
+//dasdhboard last up 24
+
 import CCard from "../components/chart_card";
 import Header from "../components/header";
 import Card from "../components/card";
 import image from "../images/dbg.jpg";
-export default function Homepage() {
+import { Auth } from "../actions/userAction";
+export default async function Homepage() {
+    await Auth()
 
     return (
         <div className="container">

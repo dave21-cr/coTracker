@@ -21,13 +21,13 @@ export default function RegisterForm() {
         defaultValues:
         {
             email: "",
-            username: ""
+            name: ""
         }
     })
 
     //onsubmit callbac
     async function onsubmit(values: z.infer<typeof Registerschema>) {
-        await registerUser(values)
+        await registerUser("PASS",values)
     }
 
     return (
@@ -54,13 +54,13 @@ export default function RegisterForm() {
 
                 <FormField
                     control={form.control}
-                    name="username"
+                    name="name"
                     render={({ field }) =>
                     (
                         <FormItem>
-                            <FormLabel>Username</FormLabel>
+                            <FormLabel>name</FormLabel>
                             <FormDescription>
-                                input username
+                                input your name
                             </FormDescription>
                             <FormControl>
                                 <Input placeholder="john" {...field} />

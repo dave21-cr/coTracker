@@ -12,8 +12,8 @@ export const loginschema = z.object(
 export const Registerschema = z.object(
     {
         email: z.string().email(),
-        username: z.string().max(50).min(3),
-        password: z.string().max(100, { message: "password can't be more than 100 characters" }),
+        name: z.string().max(50).min(3),
+        password: z.string()?.max(100, { message: "password can't be more than 100 characters" }),
         confirmpass: z.string().max(100, { message: "password can't be more than 100 characters" }),
     }
 ).refine(data => {
@@ -23,6 +23,11 @@ export const Registerschema = z.object(
     path: ["confirmpass"]
 });
 
+
+export interface userinfo{
+    email?:string,
+    name?:string
+}
 
 //last updated 24 
 
