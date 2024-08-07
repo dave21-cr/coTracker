@@ -11,12 +11,12 @@
 
 /**custom body  **/
 body{
-    @apply bg-gray-100 flex items-start flex-col gap-2;
+    @apply bg-gray-100 flex items-start flex-col gap-2 w-full h-full;
  }
  
  /** navbar and menu items **/
  .navbar{
-     @apply flex items-center justify-between flex-row text-white dark:text-orange-600
+     @apply flex items-center justify-between flex-row text-white dark:text-orange-600 z-50
      font-bold text-lg px-20 max-sm:px-3 py-10 max-sm:py-5 w-full bg-gradient-to-r from-slate-500 to-slate-950;
  }
  

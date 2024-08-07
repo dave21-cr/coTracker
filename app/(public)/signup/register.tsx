@@ -1,7 +1,5 @@
 "use client"
 //register form 
-//login form 
-"use client"
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -12,8 +10,8 @@ import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { Registerschema } from "@/app/actions/schemas";
 import { registerUser } from "../../actions/userAction"
-
-
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 export default function RegisterForm() {
     //react-hook-form
     const form = useForm<z.infer<typeof Registerschema>>({
@@ -25,15 +23,27 @@ export default function RegisterForm() {
         }
     })
 
+    const search = useSearchParams()
+    const router = useRouter()
+    const errorMessage = search.get("error")
+
     //onsubmit callbac
     async function onsubmit(values: z.infer<typeof Registerschema>) {
-        await registerUser("PASS",values)
+        const r = await registerUser("PASS", values)
+        if (r)
+            router.push("/login?success=s")
+        else
+            router.push("/signup?error=e")
     }
 
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onsubmit)}
                 className="flex flex-col max-md:w-full w-1/2 p-5">
+                {errorMessage &&
+                    <div className="flex items-center justify-center bg-red-900 text-gray-200 font-light
+                text-4xl">{"Failed to register"}</div>
+                }
                 <FormField
                     control={form.control}
                     name="email"

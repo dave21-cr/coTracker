@@ -32,10 +32,10 @@ export async function registerUser(type: regmode, credentials?: z.infer<typeof R
             }
         })
         client.$disconnect
-    } else if (type=="A0" && profile!=undefined){
+    } else if (type == "A0" && profile != undefined) {
         //cont
         const client = new PrismaClient()
-        const user = await getUser_(profile.email || "") 
+        const user = await getUser_(profile.email || "")
         if (user)
             return
         await client.user.create({
@@ -46,8 +46,7 @@ export async function registerUser(type: regmode, credentials?: z.infer<typeof R
         })
         client.$disconnect
     }
-
-    redirect("/")
+    return true;
 }
 
 //getuser
@@ -74,6 +73,15 @@ export async function getUser_(email: string) {
     //
     client.$disconnect
     return user
+}
+
+//
+export async function getUserId() {
+    const e = await getsessionE()
+    if (e == undefined || e == null)
+        return null
+   const user= await getUser_(e)
+   return user?.id
 }
 
 //all 

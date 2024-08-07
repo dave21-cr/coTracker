@@ -24,10 +24,35 @@ export const Registerschema = z.object(
 });
 
 
-export interface userinfo{
-    email?:string,
-    name?:string
+//task
+export const TaskSchema = z.object({
+    name: z.string().max(100, { message: "please use only short memorable title" }),
+    start: z.string().refine((date) => {
+        const d = new Date(date)
+        return d > new Date()
+    }, {
+        message: "start date must be greater than the current date"
+    }),
+    end: z.string()
+}).refine((values) => {
+    const start = new Date(values.start)
+    const end = new Date(values.end)
+    return end > start
+}, {
+    message: "end date must be greater than the start date",
+    path: ["end"]
+})
+
+//
+export interface userinfo {
+    email?: string,
+    name?: string
 }
 
-//last updated 24 
-
+export interface tableSchema {
+    name: string,
+    start: Date,
+    end: Date,
+    status: string,
+    id?: number
+}

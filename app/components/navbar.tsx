@@ -5,6 +5,7 @@ import "next/image";
 import image from "../images/logo.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { GiNextButton } from "react-icons/gi";
 
 interface navbarprop {
   theme: string,
@@ -28,7 +29,7 @@ const Navbar: React.FC<navbarprop> = ({ theme, type }) => {
 
       {type == "internal" &&
         <div className="header-right">
-          <Link href={"/"} className="header-link">Tasks</Link>
+          <Link href={"/task"} className="header-link">Tasks</Link>
           <button className="header-link" onClick={() => {
             //switch theme
             setTheme(th == "night" ? "day" : "night")
