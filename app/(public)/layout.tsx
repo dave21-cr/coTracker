@@ -24,13 +24,12 @@ export const metadata: Metadata = {
 }
 
 
-
 export default function Layout({ children, }: { children: React.ReactNode }) {
     return (
         <html>
             <body className={inter.className}>
                 <nav className="w-full sticky top-0" >
-                    <Navbar theme="day"/>
+                    <Navbar/>
                 </nav>
                 {children}
             </body>

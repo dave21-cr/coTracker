@@ -16,8 +16,8 @@ body{
  
  /** navbar and menu items **/
  .navbar{
-     @apply flex items-center justify-between flex-row text-white dark:text-orange-600 z-50
-     font-bold text-lg px-20 max-sm:px-3 py-10 max-sm:py-5 w-full bg-gradient-to-r from-slate-500 to-slate-950;
+     @apply flex flex-row  justify-between text-white dark:text-orange-600 z-50
+     font-bold text-lg px-10 max-sm:px-3 py-10 max-sm:py-5 w-full bg-gradient-to-r from-slate-500 to-slate-950;
  }
  
  .header-left{
@@ -25,12 +25,16 @@ body{
  }
  
  .header-right{
-     @apply flex flex-row justify-start gap-5 max-sm:invisible;
+     @apply flex flex-row justify-start gap-5 max-sm:hidden items-center;
      
  }
  
  .header-link{
      @apply font-extrabold text-xl uppercase hover:text-red-950;
+ }
+
+ .drawer {
+    @apply max-sm:flex hidden;
  }
  
  /**  the container nad body  **/
