@@ -11,7 +11,7 @@
 
 /**custom body  **/
 body{
-    @apply bg-gray-100 flex items-start flex-col gap-2 w-full h-full;
+    @apply bg-gray-100 flex items-start flex-col dark:bg-slate-950 gap-2 w-full h-full;
  }
  
  /** navbar and menu items **/
@@ -41,7 +41,7 @@ body{
  
  .container {
  @apply flex flex-col  w-full  overflow-x-hidden 
- overflow-y-auto items-center gap-5
+ overflow-y-auto items-center gap-5 dark:bg-gradient-to-r from-slate-950 to-slate-800;
  }
  
 

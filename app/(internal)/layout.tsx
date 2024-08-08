@@ -31,7 +31,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
         <html>
             <body className={inter.className}>
                 <nav className="w-full sticky top-0" >
-                    <Navbar theme="day" type="internal"/>
+                    <Navbar type="internal"/>
                 </nav>
                 {children}
             </body>

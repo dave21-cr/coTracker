@@ -9,7 +9,8 @@ import { redirect } from "next/navigation";
 export default async function NewTask() {
   await Auth()
   return (
-    <main className="flex w-full h-full items-center justify-center p-10 bg-gradient-to-r from-slate-50 to-slate-300">
+    <main className="flex w-full h-full items-center justify-center p-10 bg-gradient-to-r
+     from-slate-50 to-slate-300 dark:from-slate-600 dark:to-slate-900">
       <div className="flex flex-col items-start justify-start shadow-sm shadow-black bg-slate-200
        w-[560px] h-[250px] max-sm:w-full max-sm:h-[300px]">
         <Taskform />

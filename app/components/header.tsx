@@ -10,6 +10,6 @@ const inter = Inter({
 
 export default function Header(info: userInfo) {
     return (
-        <h1 className={"text-5xl font-bold max-sm:text-3xl text-slate-900 dark:text-white" + inter.className}> Wellcome {info.name}</h1>
+        <h1 className={"text-5xl font-bold max-sm:text-3xl text-slate-900 dark:text-white " + inter.className}> Wellcome {info.name}</h1>
     )
 }

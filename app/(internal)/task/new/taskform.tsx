@@ -34,7 +34,7 @@ export default function Taskform() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onsubmit)} className='p-3 flex flex-col w-full gap-2'>
+            <form onSubmit={form.handleSubmit(onsubmit)} className='p-3 flex flex-col w-full gap-2 dark:bg-slate-900'>
                 {error && <div className="flex items-center justify-center bg-red-900 text-gray-200 font-light
                 text-4xl">{"can't create the task"}</div>
                 }
@@ -63,7 +63,7 @@ export default function Taskform() {
                             return (
                                 <FormItem>
                                     <FormControl>
-                                        <Input type='datetime-local' {...field}></Input>
+                                        <Input type='datetime-local' {...field} className="dark:text-white dark:bg-slate-800"></Input>
                                     </FormControl>
                                     <FormMessage />
                                     <FormDescription>
@@ -80,7 +80,7 @@ export default function Taskform() {
                             return (
                                 <FormItem>
                                     <FormControl>
-                                        <Input type='datetime-local' {...field}></Input>
+                                        <Input type='datetime-local' {...field} className="dark:text-white dark:bg-slate-800"></Input>
                                     </FormControl>
                                     <FormMessage />
                                     <FormDescription>

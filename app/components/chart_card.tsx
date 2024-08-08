@@ -27,7 +27,7 @@ const inter = Inter({
 export default function CCard(detail: cardprop) {
 
     return (
-        <div className="bg-green-200 bg= w-1/3 max-sm:w-full m-5 flex flex-col
+        <div className="bg-green-200 dark:bg-black dark:text-white bg= w-1/3 max-sm:w-full m-5 flex flex-col
          items-center shadow-md">
             <h1 className={"text-3xl font-bold" + inter.className}>{detail.header}</h1>
             {(detail.type == "bar") &&

@@ -45,7 +45,7 @@ const TaskBox: React.FC<{ activetask: tableSchema[], alltask: tableSchema[] }> =
         router.push("/task/new")
     }
     return (
-        <div>
+        <div className="dark:bg-slate-600">
             <div className="flex flex-row justify-start">
                 <Button variant={"outline"} className="text-white font-bold hover:bg-green-500 bg-green-800" onClick={HandleNew}>New</Button>
             </div>

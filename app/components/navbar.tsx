@@ -65,7 +65,7 @@ const Navbar: React.FC<navbarprop> = ({ type }) => {
                     <Link className="header-link" href={"/"}>CO TRACKER</Link>
                   </div>
                 </SheetTitle>
-                <SheetDescription>Your Next co alarm</SheetDescription>
+                <SheetDescription>Your Next Task Friend</SheetDescription>
               </SheetHeader>
               <div className="flex flex-col justify-center items-center gap-5">
               <Link href={"/task"} className="header-link">Tasks</Link>
