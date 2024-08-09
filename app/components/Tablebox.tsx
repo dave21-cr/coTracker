@@ -19,7 +19,7 @@ const Tablebox: React.FC<{
     tableType: string, tabled: tableSchema[],
     setTable: React.Dispatch<React.SetStateAction<tableSchema[]>>,
     updatecallback?: (itemid: number,from:string) => void,
-    statusCallback?: (itemid: number,from:string) => void
+    statusCallback?: (itemid: number,from:string,stat:string) => void
 }> = ({ tableType, tabled, setTable, updatecallback, statusCallback }) => {
     const router = useRouter()
     const { toast } = useToast()
@@ -73,7 +73,7 @@ const Tablebox: React.FC<{
             })
         }
         if (statusCallback!=undefined &&task.id != undefined)
-            statusCallback(task.id,tableType)
+            statusCallback(task.id,tableType,type)
     }
 
     //timeouit

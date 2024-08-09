@@ -23,8 +23,8 @@ const TaskBox: React.FC<{ activetask: tableSchema[], alltask: tableSchema[] }> =
         }
     }
 
-    //activechanged 
-    const statusChanged = (itemId: number, from: string) => {
+    //status changed from either table 
+    const statusChanged = (itemId: number, from: string,stat:string) => {
         if (from == "all") {
             setActive((prev) => {
                 return prev.filter((value) => value.id != itemId 
@@ -33,7 +33,7 @@ const TaskBox: React.FC<{ activetask: tableSchema[], alltask: tableSchema[] }> =
         } else {
             setAll((prev) => {
                 return prev.map((value) => {
-                    return value.id == itemId ? { ...value, status: "completed" } :
+                    return value.id == itemId ? { ...value, status: stat } :
                         value
                 })
             })
