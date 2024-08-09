@@ -45,7 +45,7 @@ export default function Taskform() {
                         return (
                             <FormItem>
                                 <FormControl>
-                                    <Input placeholder='name' type='text' {...field}></Input>
+                                    <Input placeholder='name' type='text' {...field} className="dark:text-white dark:bg-slate-800"></Input>
                                 </FormControl>
                                 <FormMessage />
                                 <FormDescription>
