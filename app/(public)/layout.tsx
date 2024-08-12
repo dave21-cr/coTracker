@@ -1,5 +1,4 @@
-//root layout 
-
+//login and signup layout
 import React from "react";
 import next, { Metadata } from "next";
 import "../globals.css";
@@ -20,19 +19,17 @@ const inter = Inter({
 //meta da
 export const metadata: Metadata = {
     // 
-    title: "Co - Tracker Dashboard",
-    description: " track your plans with co tracker easily",
-    viewport: "width=device-width, initial-scale=1.0",
+    title: "Co -tracker ",
+    description: " track your plans with co tracker easily"
 }
 
 
-
-export default function RootLayout({ children, }: { children: React.ReactNode }) {
+export default function Layout({ children, }: { children: React.ReactNode }) {
     return (
         <html>
             <body className={inter.className}>
                 <nav className="w-full sticky top-0" >
-                    <Navbar type="internal" />
+                    <Navbar/>
                 </nav>
                 {children}
             </body>

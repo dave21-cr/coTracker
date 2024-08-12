@@ -8,26 +8,44 @@
     --dark:rgba(8, 10, 3, 0.342);
 }
 
+
 /**custom body  **/
 body{
-   @apply bg-gray-400 flex items-start flex-col;
-}
+    @apply bg-gray-100 flex items-start flex-col dark:bg-slate-950 gap-2 w-full h-full
+    overflow-auto;
+ }
+ 
+ /** navbar and menu items **/
+ .navbar{
+     @apply flex flex-row  justify-between text-white dark:text-orange-600 z-50
+     font-bold text-lg px-10 max-sm:px-3 py-10 max-sm:py-5 w-full bg-gradient-to-r from-slate-500 to-slate-950;
+ }
+ 
+ .header-left{
+     @apply flex flex-row gap-1 p-1 
+ }
+ 
+ .header-right{
+     @apply flex flex-row justify-start gap-5 max-sm:hidden items-center;
+     
+ }
+ 
+ .header-link{
+     @apply font-extrabold text-xl uppercase hover:text-red-950;
+ }
 
-/** navbar and menu items **/
-.navbar{
-    @apply flex items-center justify-between flex-row text-white dark:text-orange-600
-    font-bold text-lg px-20 max-sm:px-3 py-10 max-sm:py-5 w-full bg-gradient-to-r from-slate-500 to-slate-950;
-}
+ .drawer {
+    @apply max-sm:flex hidden;
+ }
+ 
+ /**  the container nad body  **/
+ 
+ .container {
+ @apply flex flex-col  w-full  overflow-x-auto 
+ overflow-y-auto items-center max-sm:items-start gap-5 dark:bg-gradient-to-r from-slate-950 to-slate-800;
+ }
+ 
 
-.header-left{
-    @apply flex flex-row gap-1 p-1 
-}
-
-.header-right{
-    @apply flex flex-row justify-start gap-5 max-sm:invisible;
-    
-}
-
-.header-link{
-    @apply font-extrabold text-xl uppercase hover:text-red-950;
-}
+ .test{
+     @apply text-5xl;
+ }
